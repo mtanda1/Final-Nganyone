@@ -1,7 +1,10 @@
 /* Header Style */
 .header{
-  background-color: #424d57;
+  background-color: #404040;
   padding: 20px;
+}
+.welcome h1{
+
 }
 /*Footer Style */
 /*.footer{
