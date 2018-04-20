@@ -3,11 +3,9 @@
   background-color: #404040;
   padding: 20px;
 }
-.welcome {
-  font: italic "Comic Sans";
-}
+
 h1{
-  font-family: "Comic Sans MS, Comic Sans, cursive";
+  font-family: "Courier New";
 }
 /*Footer Style */
 /*.footer{
