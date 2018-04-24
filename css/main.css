@@ -1,11 +1,11 @@
 /* Header Style */
 .header{
   background-color: #a9a9a9;
-  padding: 20px;
+  padding: 14px;
 }
 
 /*Footer Style */
-/*.footer{
-  background-color: #424d57;
+.footer{
+  background-color: #a9a9a9;
   padding: 20px;
-}*/
+}
