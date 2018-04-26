@@ -16,3 +16,47 @@
   color:black;
   text-align: center;
 }
+h1 {
+	text-align: center;
+	margin: auto;
+}
+
+h2 {
+	text-align: center;
+	margin: auto;
+	outline-width: -10px;
+}
+
+.column {
+  float: left;
+  width: 14.33%;
+  padding: 30px;
+  margin: auto;
+  text-align: center;
+
+
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  text-align: center;
+
+
+}
+
+.fl {
+	text-align: center;
+	margin: auto;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.desc {
+	float: bottom;
+	margin: auto;
+	text-align: center;
+	font-size: 15px;
+}
