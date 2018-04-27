@@ -11,7 +11,9 @@
   text-align: center;
   color: red;
 }
-
+.jumbotron{
+	color:white
+}
 .container{
   color:black;
   text-align: center;
