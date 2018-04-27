@@ -2,12 +2,10 @@
 <html>
 <head>
 <title>insert data in database</title>
-<div class="form-style-2">
-
 <link href="prettyform.css" rel="stylesheet">
 </head>
 <body>
-
+<div class="form-style-2">
 <div class="maindiv">
 <!--HTML Form -->
 <div class="form_div">
@@ -25,19 +23,19 @@
 <p id="demo"></p>
 
 <script>
-function validateEmail() 
-{   
+function validateEmail()
+{
     //stop = true;
     txt = "";
     var re = /\S+@\S+\.\S+/;
     if(re.test(emails.value)){
         //stop = false;
         return true;
-    }else{txt = 'Email should be in the format email@provider.com; please fix the email'; 
+    }else{txt = 'Email should be in the format email@provider.com; please fix the email';
         alert(txt)
         return false;
     }
-    
+
     document.getElementById("demo").innerHTML = txt;
     // document.getElementById("iswrong").innerHTML = stop;
 
@@ -71,7 +69,7 @@ $conn = new mysqli('localhost', 'root', '' , 'infosci', 3306);
     // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 echo "Connected successfully <br>";
 if(isset($_POST['submit'])){ // Fetching variables of the form which travels in URL
 
