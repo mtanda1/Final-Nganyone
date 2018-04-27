@@ -1,2 +1,55 @@
 <html>
+<head>
+<title>insert data in database</title>
+<div class="form-style-2">
+<link href="prettyform.css" rel="stylesheet">
+<script>
+function validateEmail()
+{
+    //stop = true;
+    txt = "";
+    var re = /\S+@\S+\.\S+/;
+    if(re.test(emails.value)){
+        //stop = false;
+        return true;
+    }else{txt = 'Email should be in the format email@provider.com; please fix the email';
+        alert(txt)
+        return false;
+    }
+    document.getElementById("demo").innerHTML = txt;
+    // document.getElementById("iswrong").innerHTML = stop;
+}
+</script>
+</head>
+<body>
+
+<div class="maindiv">
+<!--HTML Form -->
+<div class="form_div">
+<div class="title">
+<h2>Insert Data In Database</h2>
+</div>
+<form action="contact.php" method="post" onsubmit = "return validateEmail()">
+<br><label>First Name:</label>
+<input class="input" name="f_name" type="text" value="" required><br>
+<br><label>Last Name:</label>
+<input class="input" name="l_name" type="text" value="" required><br>
+<br><label>Email:</label>
+<input id = "emails" class="input" name="email" type="text" value="" required><br>
+<p id="demo"></p>
+<br><label>Phone Number:</label>
+<input class="input" name="phone_number" type="number" value="" ><br>
+<br><label>uid:</label>
+<input class="input" name="uid" type="number" value="" ><br>
+<br><label>Message:</label>
+<textarea cols="25" name="message" rows="5"></textarea><br>
+<br><label>wanna get spammed?:</label>
+<input class="input" name="spam_bool" type="radio" value="no" checked> no<br>
+<input class="input" name="spam_bool" type="radio" value="yes" >yes<br>
+<input name = "submit" class="submit" class="submit" type="submit" value="Insert">
+<var id = iswrong></var>
+</form>
+</div>
+</div>
+</body>
 </html>
