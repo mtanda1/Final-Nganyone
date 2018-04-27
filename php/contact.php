@@ -75,12 +75,12 @@ if ($conn->connect_error) {
 echo "Connected successfully <br>";
 if(isset($_POST['submit'])){ // Fetching variables of the form which travels in URL
 
-$f_name = $_POST['f_name'];
-$l_name = $_POST['l_name'];
-$email = $_POST['email'];
-$phone_number = $_POST['phone_number'];
-$message = $_POST['message'];
-$uid = $_POST['uid'];
+$f_name = mysqli_real_escape_string($conn,$_POST['f_name']);
+$l_name = mysqli_real_escape_string($conn,$_POST['l_name']);
+$email = mysqli_real_escape_string($conn,$_POST['email']);
+$phone_number = mysqli_real_escape_string($conn,$_POST['phone_number']);
+$message = mysqli_real_escape_string($conn,$_POST['message']);
+$uid = mysqli_real_escape_string($conn,$_POST['uid']);
 $spam_bool = $_POST['spam_bool'];
 if($f_name !=''||$l_name !=''||$email !='' ||$message !=''){
 //Insert Query of SQL
