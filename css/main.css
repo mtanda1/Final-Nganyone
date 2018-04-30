@@ -11,6 +11,11 @@
   text-align: center;
   color: red;
 }
+/*navbar animation */
+ul.navbar-nav a:hover { 
+	transition: 1s;
+	color: red !important; 
+}
 
 .container{
   color:black;
