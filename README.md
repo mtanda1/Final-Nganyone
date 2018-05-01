@@ -1,5 +1,5 @@
 # Welcome to the Information Science Society Website (GitHub)
-
+ ![Profile Picture](https://github.com/mtanda1/Final-Nganyone/blob/master/images/large.jpg "Our Logo")
 * Team Members:
 	* Shishiri Nganyone
 	* Marco Tanda
@@ -7,7 +7,7 @@
 	* Brandon Drummond
 
 We are developing an end-to-end website for the Information Science Society. 
-:star: ![Profile Picture](https://github.com/mtanda1/Final-Nganyone/blob/master/images/large.jpg "Our Logo")
+:star:
 
 ## Repo contains the following folders:
 
