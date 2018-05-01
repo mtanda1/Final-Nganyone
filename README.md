@@ -1,6 +1,6 @@
 # Welcome to the Information Science Society Website (GitHub)
  ![Profile Picture](https://github.com/mtanda1/Final-Nganyone/blob/master/images/large.jpg "Our Logo")
-* Team Members:
+* Team Members:  
 	* Shishiri Nganyone
 	* Marco Tanda
 	* Alex Luong
