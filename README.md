@@ -7,7 +7,7 @@
 	* Brandon Drummond
 
 We are developing an end-to-end website for the Information Science Society. 
-:star: ![Profile Picture](https://github.com/mtanda1/Final-Nganyone/images/large.png "Our Logo")
+:star: ![Profile Picture](https://github.com/mtanda1/Final-Nganyone/blob/master/images/large.jpg "Our Logo")
 
 ## Repo contains the following folders:
 
