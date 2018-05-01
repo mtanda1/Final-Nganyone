@@ -1,4 +1,4 @@
-#Information Science Society Website GitHub
+# Information Science Society Website GitHub
 
 * Team Members
 	* Shishiri Nganyone
