@@ -9,7 +9,7 @@
 We are developing an end-to-end website for the Information Science Society. 
 :star:
 
-##H2 Repo contains the following folders
+# Repo contains the following folders:
 
 css - contains main css file and potentially any other important css files if needed
 html - contains most pages for the website that do not need php
