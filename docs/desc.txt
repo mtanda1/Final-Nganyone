@@ -4,6 +4,11 @@
 
 2. Why is the application necessary (or useful)?
 
+    The website has been developed so that students can find more information about
+    the Information Science Society. Information that we want to include on the Website
+    includes things like what we do, who we are, and how we can help students get involved
+    on campus.
+
 3. Who are the application users?
 
   The web application interface is intended primarily for students,
