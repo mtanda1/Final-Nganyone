@@ -1,0 +1,19 @@
+1. What is the application?
+
+  An interactive website developed for the Information Science Society.
+
+2. Why is the application necessary (or useful)?
+
+3. Who are the application users?
+
+  The web application interface is intended primarily for students,
+  staff, and faculty members.
+
+4. How does the application work?
+
+  The web application has navigation bar to help users find the various HTML
+  pages on the website. The home page has a social media link to Facebook and Twitter.
+  The about page has a cascading photo gallery to showcase club photos. The members page
+  has an array of photos of each of the board members and representatives for the club.
+  The contact us page has a form for users to fill out if they desire to receive additional
+  information about future events and e-mail notifications.
