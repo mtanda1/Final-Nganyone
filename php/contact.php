@@ -36,16 +36,16 @@ function validateEmail()
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="info.html">Home</a>
+          <a class="nav-link" href="../html/info.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="about.html">About Us</a>
+          <a class="nav-link active" href="../html/about.html">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="members.html">Members</a>
+          <a class="nav-link active" href="../html/members.html">Members</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="contact.html">Contact Us</a>
+          <a class="nav-link active" href="../php/contact.php">Contact Us</a>
         </li>
       </ul>
     </div>
