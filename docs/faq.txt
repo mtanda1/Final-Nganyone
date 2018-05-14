@@ -1,0 +1,9 @@
+Frequently Asked Questions (FAQs)
+
+1. Where are the html pages?
+
+  All the html links are located on the navigation bar?
+  The links will take you to your desired webpage on
+  click.
+
+2. 
