@@ -1,10 +1,11 @@
 <html>
+<!--Contact us Page-->
 <head>
 <link rel ="stylesheet" href="../css/main.css">
     <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
-<!-- Icons8 -->
+<!--JS input validation to prevent SQL injection-->
 <script>
 function validateEmail()
 {
@@ -25,6 +26,7 @@ function validateEmail()
 <title>Contact Us!</title>
 </head>
 <body>
+<!-- Main Icon on header, pulled from Marco's github -->
   <div class='header'>
     <div class="image">
       <img src="https://raw.githubusercontent.com/mtanda1/infosciwebsite/master/images/large.jpg" width="50" height="50">
@@ -32,7 +34,6 @@ function validateEmail()
   </div>
   <!-- Bootstrap Navigation Bar -->
   <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
-    <!--<a class="navbar-brand" href="#">Information Science Society</a>-->
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav">
         <li class="nav-item active">
@@ -63,7 +64,7 @@ function validateEmail()
   </div>
 </div>
 
-<!--HTML Form -->
+<!--HTML Form: Each form input will have different inputs needed, which will all be added in their own column into the SQL database. Calls validateEmail method to ensure security -->
 
 <form action="contact.php" method="post" onsubmit = "return validateEmail()">
   <div class="form-row">
@@ -144,7 +145,7 @@ function validateEmail()
 
 
 
-
+<!--PHP Action script which will input information into SQL database-->
 <?php
 $conn = new mysqli('localhost', 'root', '' , 'infosci', 3306);
     // Check connection
