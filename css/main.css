@@ -1,3 +1,4 @@
+/*CSS Styling sheet used for all pages*/
 /* Header Style */
 .header{
   background-color: #a9a9a9;
@@ -30,6 +31,7 @@ ul.navbar-nav a:hover {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+/*Headers will allign to center*/
 h1 {
 	text-align: center;
 	margin: auto;
@@ -40,7 +42,7 @@ h2 {
 	margin: auto;
 	outline-width: -10px;
 }
-
+/*Columns will also allign to center, will have padding for neat spacing*/
 .column {
   float: left;
   width: 14.66%;
@@ -60,7 +62,7 @@ h2 {
 
 
 }
-
+/*fl and desc class will be formatting for members page*/
 .fl {
 	text-align: center;
 	margin: auto;
@@ -68,7 +70,6 @@ h2 {
 	font-size: 18px;
 	height: 50px;
 }
-
 .desc {
 	float: bottom;
 	margin: auto;
