@@ -36,7 +36,7 @@ if($f_name !=''||$l_name !=''||$email !='' ||$message !=''){
   else{
     echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
   }*/
-  include_once $_SERVER['DOCUMENT_ROOT'] . '/infosciwebsite/securimage/securimage.php';
+  include_once $_SERVER['DOCUMENT_ROOT'] . '/infosciwebsite/code/securimage/securimage.php';
   $securimage = new Securimage();
   if ($securimage->check($_POST['captcha_code']) == false) {
   // the code was incorrect
@@ -105,7 +105,7 @@ function validateEmail()
 <!-- Main Icon on header, pulled from Marco's github -->
   <div class='header'>
     <div class="image">
-      <img src="https://raw.githubusercontent.com/mtanda1/infosciwebsite/master/images/large.jpg" width="50" height="50">
+      <img src="https://raw.githubusercontent.com/mtanda1/infosciwebsite/master/code/images/large.jpg" width="50" height="50">
     </div>
   </div>
   <!-- Bootstrap Navigation Bar -->
