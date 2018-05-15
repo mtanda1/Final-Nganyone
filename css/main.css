@@ -12,11 +12,13 @@
   color: red;
 }
 /*navbar animation */
-ul.navbar-nav a:hover { 
+ul.navbar-nav a:hover {
 	transition: 1s;
-	color: red !important; 
+	color: red !important;
 }
-
+.btn-link{
+  color: red !important;
+}
 .container{
   color:black;
   text-align: center;
