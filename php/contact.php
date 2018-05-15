@@ -1,3 +1,81 @@
+<?php
+session_start();
+
+
+
+
+
+
+$conn = new mysqli('localhost', 'root', '' , 'infosci', 3306);
+    // Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully <br>";
+if(isset($_POST['submit'])){ // Fetching variables of the form which travels in URL
+$prep = "insert into infosci.contact(f_name, l_name, email, phone_number, uid, message, spam_bool) values (?,?,?,?,?,?,?)";
+$stmt = $conn->prepare($prep);//creates prepared statement
+$stmt -> bind_param("sssssss",$f_name,$l_name,$email,$phone_number,$uid,$message,$spam_bool);//binds variables
+
+$f_name = mysqli_real_escape_string($conn,$_POST['f_name']);
+$l_name = mysqli_real_escape_string($conn,$_POST['l_name']);
+$email = mysqli_real_escape_string($conn,$_POST['email']);
+$phone_number = mysqli_real_escape_string($conn,$_POST['phone_number']);
+$message = mysqli_real_escape_string($conn,$_POST['message']);
+$uid = mysqli_real_escape_string($conn,$_POST['uid']);
+$spam_bool = mysqli_real_escape_string($conn,$_POST['spam_bool']);
+//$stmt -> execute();
+if($f_name !=''||$l_name !=''||$email !='' ||$message !=''){
+//Insert Query of SQL
+    //echo 'hello';
+//$query = "insert into infosci.contact(f_name, l_name, email, phone_number, uid, message, spam_bool) values ('$f_name','$l_name', '$email', '$phone_number', '$uid', '$message', '$spam_bool')";
+$stmt -> execute();
+$result = $conn->query($query);
+echo "<br/><br/><span>Data Inserted successfully...!!</span>";
+$q = "select * from infosci.contact";
+    $result = $conn->query($q);
+    if (!$result) die($conn->error);
+    $rows = $result->num_rows;
+    echo "There are " . $rows . " rows in the contact table.";
+  }
+  else{
+    echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
+  }
+  include_once $_SERVER['DOCUMENT_ROOT'] . '/infosciwebsite/securimage/securimage.php';
+  $securimage = new Securimage();
+  if ($securimage->check($_POST['captcha_code']) == false) {
+  // the code was incorrect
+  // you should handle the error so that the form processor doesn't continue
+
+  // or you can use the following code if there is no validation or you do not know how
+  echo "The security code entered was incorrect.<br /><br />";
+  echo "Please go <a href='javascript:history.go(-1)'>back</a> and try again.";
+  exit;
+}
+}
+
+//mysql_close($connection); // Closing Connection with Server
+//header( 'Location: http://localhost/formtoinsert.html' );
+
+//display data
+/*$displaydata = "SELECT contact_id, f_name, l_name FROM infosci.contact";
+$res = $conn->query($displaydata);
+
+if ($res->num_rows > 0) {
+    // output data of each row
+    while($row = $res->fetch_assoc()) {
+        echo "id: " . $row["contact_id"]. "     " . " - Name: " . $row["f_name"]. "     ". "- date added: " . $row["l_name"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}*/
+
+$conn->close();
+?>
+
+
+
+
 <html>
 <!--Contact us Page-->
 <head>
@@ -48,7 +126,7 @@ function validateEmail()
         <li class="nav-item">
           <a class="nav-link active" href="../php/contact.php">Contact Us</a>
         </li>
-		  <li class="nav-item">
+      <li class="nav-item">
           <a class="nav-link active" href="../html/faq.html">FAQs</a>
         </li>
       </ul>
@@ -67,6 +145,9 @@ function validateEmail()
 <!--HTML Form: Each form input will have different inputs needed, which will all be added in their own column into the SQL database. Calls validateEmail method to ensure security -->
 
 <form action="contact.php" method="post" onsubmit = "return validateEmail()">
+  <img id="captcha" src="../securimage/securimage_show.php" alt="CAPTCHA Image" />
+    <input type="text" name="captcha_code" size="10" maxlength="6" />
+  <a href="#" onclick="document.getElementById('captcha').src = '../securimage/securimage_show.php?' + Math.random(); return false">[ Different Image ]</a>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label>First Name:</label>
@@ -100,17 +181,19 @@ function validateEmail()
     <div class="col-sm-2">
     <div class="form-check">
       <div class="col-sm-2">
-      <input class="form-check-input" name="spam_bool" type="checkbox" value="no" id = "radio1"checked>
+      <input class="form-check-input" name="spam_bool" type="radio" value="no" id = "radio1"checked>
       <label class="form-check-label" for="radio1">No</label>
     </div>
     <div class="col-sm-2">
-      <input class="form-check-input" name="spam_bool" type="checkbox" value="yes" id="check1">
-      <label class="form-check-label" for="check1">Yes</label>
+      <input class="form-check-input" name="spam_bool" type="radio" value="yes" id="check1">
+      <label class="form-check-label" for="radio2">Yes</label>
     </div>
     </div>
     </div>
     </div>
     <button name = "submit" class="btn btn-primary" type="submit" value="Insert">Submit</button>
+
+    
 </form>
 
 <!--Web Content -->
@@ -146,57 +229,3 @@ function validateEmail()
 
 
 <!--PHP Action script which will input information into SQL database-->
-<?php
-$conn = new mysqli('localhost', 'root', '' , 'infosci', 3306);
-    // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully <br>";
-if(isset($_POST['submit'])){ // Fetching variables of the form which travels in URL
-$prep = "insert into infosci.contact(f_name, l_name, email, phone_number, uid, message, spam_bool) values (?,?,?,?,?,?,?)";
-$stmt = $conn->prepare($prep);//creates prepared statement
-$stmt -> bind_param("sssssss",$f_name,$l_name,$email,$phone_number,$message,$uid,$spam_bool);//binds variables
-
-$f_name = mysqli_real_escape_string($conn,$_POST['f_name']);
-$l_name = mysqli_real_escape_string($conn,$_POST['l_name']);
-$email = mysqli_real_escape_string($conn,$_POST['email']);
-$phone_number = mysqli_real_escape_string($conn,$_POST['phone_number']);
-$message = mysqli_real_escape_string($conn,$_POST['message']);
-$uid = mysqli_real_escape_string($conn,$_POST['uid']);
-$spam_bool = $_POST['spam_bool'];
-//$stmt -> execute();
-if($f_name !=''||$l_name !=''||$email !='' ||$message !=''){
-//Insert Query of SQL
-    //echo 'hello';
-//$query = "insert into infosci.contact(f_name, l_name, email, phone_number, uid, message, spam_bool) values ('$f_name','$l_name', '$email', '$phone_number', '$uid', '$message', '$spam_bool')";
-$stmt -> execute();
-$result = $conn->query($query);
-echo "<br/><br/><span>Data Inserted successfully...!!</span>";
-$q = "select * from infosci.contact";
-    $result = $conn->query($q);
-    if (!$result) die($conn->error);
-    $rows = $result->num_rows;
-    echo "There are " . $rows . " rows in the contact table.";
-}
-else{
-echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
-}
-}
-//mysql_close($connection); // Closing Connection with Server
-//header( 'Location: http://localhost/formtoinsert.html' );
-
-//display data
-/*$displaydata = "SELECT contact_id, f_name, l_name FROM infosci.contact";
-$res = $conn->query($displaydata);
-
-if ($res->num_rows > 0) {
-    // output data of each row
-    while($row = $res->fetch_assoc()) {
-        echo "id: " . $row["contact_id"]. "     " . " - Name: " . $row["f_name"]. "     ". "- date added: " . $row["l_name"]. "<br>";
-    }
-} else {
-    echo "0 results";
-}*/
-$conn->close();
-?>
