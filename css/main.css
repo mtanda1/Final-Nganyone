@@ -16,9 +16,13 @@ ul.navbar-nav a:hover {
 	transition: 1s;
 	color: red !important;
 }
+
+/* FAQ animations */
 .btn-link{
   color: red !important;
 }
+
+/* FAQ animations */
 .container{
   color:black;
   text-align: center;
