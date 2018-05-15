@@ -9,6 +9,16 @@
 <title>About Us!</title>
 </head>
 <body>
+<!--FB JavaScript APK-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
   <div class='header'>
     <div class="image">
       <img src="https://raw.githubusercontent.com/mtanda1/infosciwebsite/master/images/large.jpg" width="50" height="50">
@@ -45,7 +55,7 @@
 
 	  <!-- Facebook Embed, currently a placeholder as a facebook post until group plugin is offered (only works on localserver and not via right click open with browser)-->
 
-	  <br></br><p><div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="500" data-show-text="true"><blockquote cite="https://www.facebook.com/20531316728/posts/10154009990506729/" class="fb-xfbml-parse-ignore">Posted by <a href="https://www.facebook.com/facebook/">Facebook</a> on&nbsp;<a href="https://www.facebook.com/20531316728/posts/10154009990506729/">Thursday, August 27, 2015</a></blockquote></div><p>
+	  <br></br><p><div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="500" data-show-text="true"><blockquote cite="https://www.facebook.com/20531316728/posts/10154009990506729/" class="fb-xfbml-parse-ignore">Posted by <a href="https://www.facebook.com/facebook/">Facebook</a> on&nbsp;<a href="https://www.facebook.com/20531316728/posts/10154009990506729/">Thursday, August 27, 2015</a></blockquote></div><p><br></br>
 
 	<!-- Twitter Embed using twitter's widgets.js for infoscisociety twitter page, it will show every tweet which will infinitely extend down the page for every tweet once they start rolling out. Recent posts is top to bottom -->
 		<a class="twitter-timeline" href="https://twitter.com/infoscisociety?ref_src=twsrc%5Etfw">Tweets by infoscisociety</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
