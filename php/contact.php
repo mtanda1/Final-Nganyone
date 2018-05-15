@@ -47,6 +47,9 @@ function validateEmail()
         <li class="nav-item">
           <a class="nav-link active" href="../php/contact.php">Contact Us</a>
         </li>
+		  <li class="nav-item">
+          <a class="nav-link active" href="../html/faq.html">FAQs</a>
+        </li>
       </ul>
     </div>
   </nav>
