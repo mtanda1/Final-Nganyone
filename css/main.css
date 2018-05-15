@@ -20,6 +20,7 @@ ul.navbar-nav a:hover {
 
 /* FAQ animations */
 .btn-link{
+  transition: 1s;
   color: red !important;
 }
 
