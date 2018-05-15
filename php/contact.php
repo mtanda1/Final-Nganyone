@@ -1,17 +1,12 @@
 <?php
 session_start();
 
-
-
-
-
-
 $conn = new mysqli('localhost', 'root', '' , 'infosci', 3306);
     // Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die();#"Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully <br>";
+#echo "Connected successfully <br>";
 if(isset($_POST['submit'])){ // Fetching variables of the form which travels in URL
 $prep = "insert into infosci.contact(f_name, l_name, email, phone_number, uid, message, spam_bool) values (?,?,?,?,?,?,?)";
 $stmt = $conn->prepare($prep);//creates prepared statement
@@ -30,16 +25,16 @@ if($f_name !=''||$l_name !=''||$email !='' ||$message !=''){
     //echo 'hello';
 //$query = "insert into infosci.contact(f_name, l_name, email, phone_number, uid, message, spam_bool) values ('$f_name','$l_name', '$email', '$phone_number', '$uid', '$message', '$spam_bool')";
 $stmt -> execute();
-$result = $conn->query($query);
-echo "<br/><br/><span>Data Inserted successfully...!!</span>";
+#$result = $conn->query($query);
+#echo "<br/><br/><span>Data Inserted successfully...!!</span>";
 $q = "select * from infosci.contact";
     $result = $conn->query($q);
-    if (!$result) die($conn->error);
+    if (!$result) die();
     $rows = $result->num_rows;
-    echo "There are " . $rows . " rows in the contact table.";
+    #echo "There are " . $rows . " rows in the contact table.";
   }
   else{
-    echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
+    #echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
   }
   include_once $_SERVER['DOCUMENT_ROOT'] . '/infosciwebsite/securimage/securimage.php';
   $securimage = new Securimage();
