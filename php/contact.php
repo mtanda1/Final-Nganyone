@@ -24,18 +24,18 @@ if($f_name !=''||$l_name !=''||$email !='' ||$message !=''){
 //Insert Query of SQL
     //echo 'hello';
 //$query = "insert into infosci.contact(f_name, l_name, email, phone_number, uid, message, spam_bool) values ('$f_name','$l_name', '$email', '$phone_number', '$uid', '$message', '$spam_bool')";
-$stmt -> execute();
+
 #$result = $conn->query($query);
 #echo "<br/><br/><span>Data Inserted successfully...!!</span>";
-$q = "select * from infosci.contact";
+/*$q = "select * from infosci.contact";
     $result = $conn->query($q);
     if (!$result) die();
     $rows = $result->num_rows;
     #echo "There are " . $rows . " rows in the contact table.";
   }
   else{
-    #echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
-  }
+    echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";
+  }*/
   include_once $_SERVER['DOCUMENT_ROOT'] . '/infosciwebsite/securimage/securimage.php';
   $securimage = new Securimage();
   if ($securimage->check($_POST['captcha_code']) == false) {
@@ -46,9 +46,12 @@ $q = "select * from infosci.contact";
   echo "The security code entered was incorrect.<br /><br />";
   echo "Please go <a href='javascript:history.go(-1)'>back</a> and try again.";
   exit;
-}
-}
+  }else{
+    $stmt -> execute();
+  }
 
+}
+}
 //mysql_close($connection); // Closing Connection with Server
 //header( 'Location: http://localhost/formtoinsert.html' );
 
