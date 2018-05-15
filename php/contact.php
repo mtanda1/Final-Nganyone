@@ -155,6 +155,9 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully <br>";
 if(isset($_POST['submit'])){ // Fetching variables of the form which travels in URL
+$prep = "insert into infosci.contact(f_name, l_name, email, phone_number, uid, message, spam_bool) values (?,?,?,?,?,?,?)";
+$stmt = $conn->prepare($prep);//creates prepared statement
+$stmt -> bind_param("sssssss",$f_name,$l_name,$email,$phone_number,$message,$uid,$spam_bool);//binds variables
 
 $f_name = mysqli_real_escape_string($conn,$_POST['f_name']);
 $l_name = mysqli_real_escape_string($conn,$_POST['l_name']);
@@ -163,10 +166,12 @@ $phone_number = mysqli_real_escape_string($conn,$_POST['phone_number']);
 $message = mysqli_real_escape_string($conn,$_POST['message']);
 $uid = mysqli_real_escape_string($conn,$_POST['uid']);
 $spam_bool = $_POST['spam_bool'];
+//$stmt -> execute();
 if($f_name !=''||$l_name !=''||$email !='' ||$message !=''){
 //Insert Query of SQL
-    echo 'hello';
-$query = "insert into infosci.contact(f_name, l_name, email, phone_number, uid, message, spam_bool) values ('$f_name','$l_name', '$email', '$phone_number', '$uid', '$message', '$spam_bool')";
+    //echo 'hello';
+//$query = "insert into infosci.contact(f_name, l_name, email, phone_number, uid, message, spam_bool) values ('$f_name','$l_name', '$email', '$phone_number', '$uid', '$message', '$spam_bool')";
+$stmt -> execute();
 $result = $conn->query($query);
 echo "<br/><br/><span>Data Inserted successfully...!!</span>";
 $q = "select * from infosci.contact";
